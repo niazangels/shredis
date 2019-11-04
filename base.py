@@ -53,7 +53,7 @@ class Server:
             except CommandError as error:
                 response = Error(error.args[0])
 
-            self._protocol.write_response(socket_file, resp)
+            self._protocol.write_response(socket_file, response)
 
     def get_response(self, data):
         # Unpack data sent by the client, execute the command and return response
